@@ -25,7 +25,6 @@
   /* COVER */
   .cover{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 28px;color:#fff;overflow:hidden;transition:opacity .9s ease, visibility .9s}
   .cover::before{content:"";position:absolute;inset:0;background:url('img/cover.jpeg') center/cover no-repeat;animation:coverZoom 20s ease-in-out infinite alternate}
-  /* GANTI FOTO COVER: setelah upload, ubah url di atas menjadi url('img/cover.jpg') */
   @keyframes coverZoom{from{transform:scale(1.05)}to{transform:scale(1.16)}}
   .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,16,10,.45) 0%,rgba(22,16,10,.6) 55%,rgba(22,16,10,.88) 100%)}
   .cover > *{position:relative;z-index:1}
@@ -138,26 +137,15 @@
   .footer-thanks{font-size:13px;color:var(--muted);line-height:1.9;max-width:400px;margin:0 auto}
   .footer-names{font-family:var(--script);font-size:52px;color:var(--gold);margin:24px 0 8px;line-height:1.1}
   .footer-credit{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:.7;margin-top:30px}
-  /* FOOTER COPYRIGHT */
-  .footer-credit-box{
-    margin-top:36px;padding-top:24px;
-    border-top:1px dashed var(--line);
-    max-width:340px;margin-left:auto;margin-right:auto;
-  }
+  .footer-credit-box{margin-top:36px;padding-top:24px;border-top:1px dashed var(--line);max-width:340px;margin-left:auto;margin-right:auto}
   .footer-made{font-size:12px;color:var(--muted);line-height:1.7}
   .footer-made strong{color:var(--ink);font-weight:600}
-  .footer-ig{
-    display:inline-flex;align-items:center;gap:6px;
-    margin-top:10px;padding:8px 18px;border-radius:999px;
-    background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-    color:#fff;font-size:12px;font-weight:500;letter-spacing:.05em;
-    text-decoration:none;transition:transform .25s, box-shadow .25s;
-    box-shadow:0 4px 14px rgba(220,39,67,.25);
-  }
+  .footer-ig{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:8px 18px;border-radius:999px;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;font-size:12px;font-weight:500;letter-spacing:.05em;text-decoration:none;transition:transform .25s, box-shadow .25s;box-shadow:0 4px 14px rgba(220,39,67,.25)}
   .footer-ig:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(220,39,67,.35)}
   .footer-ig svg{flex-shrink:0}
   .footer-dm{font-size:11px;color:var(--muted);margin-top:12px;letter-spacing:.05em;opacity:.85}
-   /* ============ MUSIK LATAR ============ */
+
+  /* ============ MUSIK LATAR ============ */
   .music-btn{
     position:fixed;bottom:22px;right:22px;z-index:90;
     width:48px;height:48px;border-radius:50%;border:1px solid var(--gold-soft);
@@ -166,7 +154,9 @@
     box-shadow:0 6px 20px rgba(176,141,87,.25);
     transition:all .3s ease;
     -webkit-tap-highlight-color:transparent;
+    opacity:0;pointer-events:none;transform:scale(.8);
   }
+  body.opened .music-btn{opacity:1;pointer-events:auto;transform:scale(1)}
   .music-btn:hover{background:var(--gold);color:#fff;transform:translateY(-2px)}
   .music-btn.playing .music-icon{animation:spin 3s linear infinite}
   .music-icon{display:flex;align-items:center;justify-content:center}
@@ -174,10 +164,6 @@
   .music-btn:not(.playing) .music-on{display:none}
   .music-btn:not(.playing) .music-off{display:flex}
   @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-
-  /* Sembunyikan tombol sebelum cover dibuka */
-  .music-btn{opacity:0;pointer-events:none;transform:scale(.8)}
-  body.opened .music-btn{opacity:1;pointer-events:auto;transform:scale(1)}
 </style>
 </head>
 <body class="locked">
@@ -227,22 +213,20 @@
       </div>
       <div class="reveal">
         <div class="person-photo">
-          <!-- FOTO MEMPELAI PEREMPUAN: ganti src jadi "img/irma.jpg" setelah upload -->
-          <img src="img/wanita.jpeg" alt="Neng" />
+          <img src="img/wanita.jpeg" alt="Neng Irma" />
         </div>
         <h3 class="person-name">Neng Irma Yunita</h3>
         <p class="person-role">Putri pertama dari</p>
-       <p class="person-parents">Bapak Iwan &amp; Ibu Enok Rohani</p>
-       
+        <p class="person-parents">Bapak Yusup Hamdan &amp; Ibu Heni Aryani</p>
+
         <div class="amp">&amp;</div>
 
         <div class="person-photo">
-          <!-- FOTO MEMPELAI LAKI-LAKI: ganti src jadi "img/asep.jpg" setelah upload -->
           <img src="img/pria.jpeg" alt="Asep" />
         </div>
         <h3 class="person-name">Asep Perdiansyah</h3>
         <p class="person-role">Putra pertama dari</p>
-        <p class="person-parents">Bapak Yusup Hamdan &amp; Ibu Heni Aryani</p>
+        <p class="person-parents">Bapak Iwan &amp; Ibu Enok Rohani</p>
       </div>
     </div>
   </section>
@@ -276,7 +260,6 @@
         <h3 class="event-name">Akad Nikah</h3>
         <p class="event-date">Sabtu, 26 Desember 2026</p>
         <p class="event-time">Pukul 09.00 WIB — selesai</p>
-        <!-- UBAH ALAMAT DI BAWAH -->
         <p class="event-place">Kediaman Mempelai<br />Kp. Pasirparahu Rt 01 Rw 05, Desa Selajambe, Sukaluyu, Cianjur</p>
         <a class="btn-outline" href="https://maps.app.goo.gl/o49B5gnRKWasibWo8/" target="_blank" rel="noopener">📍 Lihat Lokasi</a>
       </div>
@@ -286,8 +269,7 @@
         <h3 class="event-name">Resepsi</h3>
         <p class="event-date">Sabtu, 26 Desember 2026</p>
         <p class="event-time">Pukul 11.00 — 14.00 WIB</p>
-        <!-- UBAH ALAMAT DI BAWAH -->
-        <p class="event-place">Kediaman Mempelai<br />>Kp. Pasirparahu Rt 01 Rw 05, Desa Selajambe, Sukaluyu, Cianjur</p>
+        <p class="event-place">Kediaman Mempelai<br />Kp. Pasirparahu Rt 01 Rw 05, Desa Selajambe, Sukaluyu, Cianjur</p>
         <a class="btn-outline" href="https://maps.app.goo.gl/o49B5gnRKWasibWo8/" target="_blank" rel="noopener">📍 Lihat Lokasi</a>
       </div>
     </div>
@@ -338,17 +320,15 @@
         <h2 class="section-title">Galeri Prewedding</h2>
       </div>
       <div class="gallery reveal">
-        <!-- GANTI semua src dengan foto kamu setelah upload ke folder img/ -->
-        <!-- Contoh: <img class="wide" src="img/foto-1.jpg" alt="Prewedding" /> -->
         <img class="wide" src="img/cover.jpeg" alt="Prewedding" />
-        <img src="img/foto-1.jpeg" />
+        <img src="img/foto-1.jpeg" alt="Prewedding" />
         <img src="img/foto-2.jpeg" alt="Prewedding" />
         <img src="img/foto-3.jpeg" alt="Prewedding" />
         <img src="img/foto-4.jpeg" alt="Prewedding" />
         <img src="img/foto-5.jpeg" alt="Prewedding" />
-       <img src="img/foto-6.jpeg" alt="Prewedding" />
-       <img src="img/foto-7.jpeg" alt="Prewedding" />
-       <img src="img/foto-8.jpeg" alt="Prewedding" />
+        <img src="img/foto-6.jpeg" alt="Prewedding" />
+        <img src="img/foto-7.jpeg" alt="Prewedding" />
+        <img src="img/foto-8.jpeg" alt="Prewedding" />
       </div>
     </div>
   </section>
@@ -369,8 +349,6 @@
         <p class="gift-owner">a.n. Neng Irma Yunita</p>
         <button class="btn-copy" data-copy="085871018729">Salin Nomor DANA</button>
       </div>
-
-     
     </div>
   </section>
 
@@ -430,7 +408,6 @@
     <div class="divider"><i></i></div>
     <p class="footer-credit">26 · 12 · 2026</p>
 
-    <!-- COPYRIGHT -->
     <div class="footer-credit-box">
       <p class="footer-made">
         Undangan ini dibuat oleh <strong>JamjamFm</strong>
@@ -448,6 +425,29 @@
   </div>
 </footer>
 
+<!-- ================= MUSIK LATAR (SEBELUM SCRIPT) ================= -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="audio/lagu.mp3" type="audio/mpeg" />
+</audio>
+
+<button class="music-btn" id="musicBtn" aria-label="Toggle musik" title="Musik latar">
+  <span class="music-icon music-on">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+  </span>
+  <span class="music-icon music-off">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+      <line x1="2" y1="2" x2="22" y2="22"/>
+    </svg>
+  </span>
+</button>
+
 <script>
   /* ============ KONFIGURASI ============ */
   const TARGET_DATE = new Date('2026-12-26T09:00:00+07:00');
@@ -461,19 +461,19 @@
     document.getElementById('guestName').textContent = decodeURIComponent(guest.replace(/\+/g, ' '));
   }
 
-    const bgMusic  = document.getElementById('bgMusic');
+  const bgMusic  = document.getElementById('bgMusic');
   const musicBtn = document.getElementById('musicBtn');
 
+  // Buka undangan + play musik
   document.getElementById('openBtn').addEventListener('click', () => {
     const cover = document.getElementById('cover');
     cover.classList.add('hidden');
     document.body.classList.remove('locked');
-    document.body.classList.add('opened');   // ← tampilkan tombol musik
+    document.body.classList.add('opened');
     window.scrollTo(0, 0);
     setTimeout(() => { cover.style.display = 'none'; }, 900);
 
-    // Putar musik (browser baru izinkan autoplay setelah user klik)
-    bgMusic.volume = 0.5; // 50%, ubah sesuai selera (0.0 – 1.0)
+    bgMusic.volume = 0.5;
     bgMusic.play()
       .then(() => musicBtn.classList.add('playing'))
       .catch(err => console.warn('Musik gagal diputar:', err));
@@ -490,6 +490,7 @@
     }
   });
 
+  // Countdown
   function updateCountdown() {
     const diff = TARGET_DATE.getTime() - Date.now();
     if (diff <= 0) {
@@ -505,6 +506,7 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+  // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('active'); io.unobserve(e.target); }
@@ -512,6 +514,7 @@
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  // Copy nomor
   document.querySelectorAll('.btn-copy').forEach(btn => {
     btn.addEventListener('click', async () => {
       try {
@@ -523,12 +526,14 @@
     });
   });
 
+  // Escape HTML
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => (
       { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]
     ));
   }
 
+  // Load ucapan
   async function loadUcapan() {
     const list = document.getElementById('ucapanList');
     if (!list) return;
@@ -563,6 +568,7 @@
     }
   }
 
+  // Submit RSVP
   const rsvpForm  = document.getElementById('rsvpForm');
   const submitBtn = rsvpForm.querySelector('button[type="submit"]');
 
@@ -605,27 +611,6 @@
 
   loadUcapan();
 </script>
-<!-- ================= MUSIK LATAR ================= -->
-<audio id="bgMusic" loop preload="auto">
-  <source src="audio/lagu.mp3" type="audio/mpeg" />
-</audio>
 
-<button class="music-btn" id="musicBtn" aria-label="Toggle musik" title="Musik latar">
-  <span class="music-icon music-on">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-      <path d="M9 18V5l12-2v13"/>
-      <circle cx="6" cy="18" r="3"/>
-      <circle cx="18" cy="16" r="3"/>
-    </svg>
-  </span>
-  <span class="music-icon music-off">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-      <path d="M9 18V5l12-2v13"/>
-      <circle cx="6" cy="18" r="3"/>
-      <circle cx="18" cy="16" r="3"/>
-      <line x1="2" y1="2" x2="22" y2="22"/>
-    </svg>
-  </span>
-</button>
 </body>
 </html>
