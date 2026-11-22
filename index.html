@@ -138,6 +138,25 @@
   .footer-thanks{font-size:13px;color:var(--muted);line-height:1.9;max-width:400px;margin:0 auto}
   .footer-names{font-family:var(--script);font-size:52px;color:var(--gold);margin:24px 0 8px;line-height:1.1}
   .footer-credit{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);opacity:.7;margin-top:30px}
+  /* FOOTER COPYRIGHT */
+  .footer-credit-box{
+    margin-top:36px;padding-top:24px;
+    border-top:1px dashed var(--line);
+    max-width:340px;margin-left:auto;margin-right:auto;
+  }
+  .footer-made{font-size:12px;color:var(--muted);line-height:1.7}
+  .footer-made strong{color:var(--ink);font-weight:600}
+  .footer-ig{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:10px;padding:8px 18px;border-radius:999px;
+    background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color:#fff;font-size:12px;font-weight:500;letter-spacing:.05em;
+    text-decoration:none;transition:transform .25s, box-shadow .25s;
+    box-shadow:0 4px 14px rgba(220,39,67,.25);
+  }
+  .footer-ig:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(220,39,67,.35)}
+  .footer-ig svg{flex-shrink:0}
+  .footer-dm{font-size:11px;color:var(--muted);margin-top:12px;letter-spacing:.05em;opacity:.85}
 </style>
 </head>
 <body class="locked">
@@ -389,6 +408,22 @@
     <p class="footer-names">Irma &amp; Asep</p>
     <div class="divider"><i></i></div>
     <p class="footer-credit">26 · 12 · 2026</p>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-credit-box">
+      <p class="footer-made">
+        Undangan ini dibuat oleh <strong>Jamjam Firman Maulana</strong>
+      </p>
+      <a href="https://instagram.com/jamjamfirman" target="_blank" rel="noopener" class="footer-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        @jamjamfirman
+      </a>
+      <p class="footer-dm">Silakan DM untuk memesan undangan ✉️</p>
+    </div>
   </div>
 </footer>
 
